@@ -1,0 +1,75 @@
+name: StretchStreak
+options:
+  bundleIdPrefix: com.shimondeitel.stretchstreak
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  StretchStreak:
+    type: application
+    platform: iOS
+    sources:
+      - path: StretchStreak
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.stretchstreak
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: StretchStreak/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  StretchStreakTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: StretchStreakTests
+      - path: StretchStreak.storekit
+    dependencies:
+      - target: StretchStreak
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.stretchstreak.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  StretchStreakUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: StretchStreakUITests
+    dependencies:
+      - target: StretchStreak
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.stretchstreak.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  StretchStreak:
+    build:
+      targets:
+        StretchStreak: all
+        StretchStreakTests: [test]
+        StretchStreakUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: StretchStreak.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: StretchStreak.storekit
+      targets:
+        - StretchStreakTests
+        - StretchStreakUITests
+    archive:
+      config: Release

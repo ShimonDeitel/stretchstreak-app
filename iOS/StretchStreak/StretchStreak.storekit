@@ -1,0 +1,27 @@
+{
+  "identifier": "StretchStreak",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "$2.99",
+      "familyShareable": false,
+      "internalID": "1",
+      "localizations": [
+        {
+          "description": "Custom stretch routines list and reminder notifications",
+          "displayName": "StretchStreak Pro",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.shimondeitel.stretchstreak.pro",
+      "referenceName": "StretchStreak Pro",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {},
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
